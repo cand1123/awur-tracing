@@ -37,88 +37,145 @@
         
             /* Table layout */
         .fixed-table {
-            table-layout: fixed;
+            table-layout: auto;
             width: 100%;
             border-collapse: collapse;
+            min-width: 100%;
         }
         
         .fixed-table th,
         .fixed-table td {
-            overflow: visible;
-            text-overflow: clip;
             white-space: normal;
             word-wrap: break-word;
+            word-break: break-word;
             hyphens: auto;
+            max-width: none !important;
+            width: auto !important;
+            min-width: 0 !important;
         }
         
-            /* Column sizing */
+            /* Column sizing - HANCURKAN SEMUA BATASAN! */
         .col-no {
-            width: 64px !important;
-            min-width: 64px !important;
-            max-width: 64px !important;
-                text-align: center;
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            text-align: center;
         }
         
         .col-title {
-            width: 320px !important;
-            min-width: 320px !important;
-            max-width: 320px !important;
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
             white-space: normal !important;
             word-wrap: break-word !important;
             overflow-wrap: break-word !important;
             text-transform: capitalize !important;
-                text-align: left;
-            }
+            text-align: left;
+        }
             
-            .col-accreditation {
-                width: 128px !important;
-                min-width: 128px !important;
-                max-width: 128px !important;
-                text-align: center;
-                white-space: nowrap !important;
-                overflow: hidden !important;
-                text-overflow: ellipsis !important;
-            }
+        .col-accreditation {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            text-align: center;
+            white-space: normal !important;
+            word-wrap: break-word !important;
+        }
             
-            .col-status {
-                width: 128px !important;
-                min-width: 128px !important;
-                max-width: 128px !important;
-                text-align: center;
-            }
+        .col-status {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            text-align: center;
+        }
             
-            .col-year {
-                width: 96px !important;
-                min-width: 96px !important;
-                max-width: 96px !important;
-                text-align: center;
-            }
+        .col-year {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            text-align: center;
+        }
             
-            .col-actions {
-                width: 128px !important;
-                min-width: 128px !important;
-                max-width: 128px !important;
-                text-align: center;
-            }
+        .col-actions {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            text-align: center;
+        }
             
             /* Table styling */
         .table_component {
-            overflow: auto;
             width: 100%;
+            overflow: visible !important;
+            max-width: none !important;
+        }
+        
+        /* Mobile overflow - hanya untuk hp */
+        @media (max-width: 640px) {
+            .table_component {
+                overflow-x: auto !important;
+                overflow-y: visible !important;
+                width: 100% !important;
+            }
+            
+            .fresh-table {
+                min-width: 600px !important;
+                width: 600px !important;
+            }
+            
+            .fresh-table td, .fresh-table th {
+                white-space: nowrap !important;
+                word-wrap: normal !important;
+                word-break: normal !important;
+            }
+            
+            /* Khusus kolom judul tetap wrap di mobile */
+            .fresh-table td:nth-child(2),
+            .fresh-table th:nth-child(2) {
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+                max-width: 200px !important;
+            }
         }
         
         .fresh-table {
             border: 1px solid #dededf;
-            height: 100%;
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
-            border-spacing: 1px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             text-align: left;
-                border-radius: 16px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-                overflow: hidden;
-            }
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            table-layout: auto;
+            min-width: 100%;
+            max-width: none;
+        }
+
+        .fresh-table td, .fresh-table th {
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+            padding: 12px 16px;
+            vertical-align: top;
+            max-width: none !important;
+            width: auto !important;
+            min-width: 0 !important;
+        }
+
+        /* Khusus untuk kolom judul - biarkan wrap */
+        .fresh-table td:nth-child(2),
+        .fresh-table th:nth-child(2) {
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            word-break: break-word !important;
+        }
+
+        /* Untuk kolom lainnya - nowrap */
+        .fresh-table td:not(:nth-child(2)),
+        .fresh-table th:not(:nth-child(2)) {
+            white-space: nowrap !important;
+        }
             
             /* Body styling */
         .fresh-body tr {
@@ -130,16 +187,21 @@
             }
             
             .fresh-body td {
-                padding: 6px 6px;
+                padding: 12px 16px;
                 border: none;
-                vertical-align: middle;
+                vertical-align: top;
                 font-size: 12px;
-                height: 50px;
                 min-height: 50px;
                 background-color: #ffffff;
                 color: #000000;
                 border: 1px solid #e5e7eb;
                 box-sizing: border-box;
+                word-wrap: break-word;
+                word-break: break-word;
+                white-space: normal;
+                max-width: none !important;
+                width: auto !important;
+                min-width: 0 !important;
             }
             
             /* Row styling */
@@ -165,16 +227,21 @@
             }
             
         .table-row td {
-                padding: 0.75rem 1.5rem;
+                padding: 12px 16px;
             background-color: transparent;
             color: #374151;
             font-weight: 600;
             border: none;
-                height: 3.5rem;
                 min-height: 3.5rem;
-                max-height: 3.5rem;
                 box-sizing: border-box;
                 border-bottom: 1px solid #f3f4f6;
+                word-wrap: break-word;
+                word-break: break-word;
+                white-space: normal;
+                vertical-align: top;
+                max-width: none !important;
+                width: auto !important;
+                min-width: 0 !important;
             }
             
 
@@ -243,6 +310,13 @@
             color: #1e40af;
             border: 2px solid #93c5fd;
             box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+        }
+        
+            .fresh-badge.writing {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #0c4a6e;
+            border: 2px solid #7dd3fc;
+            box-shadow: 0 4px 8px rgba(14, 165, 233, 0.2);
         }
         
             .fresh-badge.declined {
@@ -364,6 +438,7 @@
             min-width: 1.5rem;
             height: 1.5rem;
                 transition: all 0.2s ease;
+                border-radius: 4px;
         }
         
         .fresh-pagination-btn:hover:not(:disabled) {
@@ -389,13 +464,25 @@
             
             /* Select styling */
         .fresh-select {
-                padding: 2px 6px;
+                padding: 4px 6px;
                 border: 1px solid #e5e7eb;
                 background: white;
                 font-size: 11px;
             color: #374151;
                 cursor: pointer;
-                border-radius: 0 !important;
+                border-radius: 4px;
+                height: 1.5rem;
+                min-height: 1.5rem;
+                width: auto;
+                min-width: 50px;
+        }
+
+        /* Khusus untuk dropdown pagination */
+        #items-per-page {
+            width: 60px !important;
+            min-width: 60px !important;
+            max-width: 60px !important;
+            padding: 4px 4px !important;
         }
         
         .fresh-select:focus {
@@ -408,15 +495,15 @@
         .filter-select, .filter-button {
             display: block;
             width: 100%;
-            padding: 0.5rem 0.75rem;
+            padding: 0.25rem 0.5rem;
             background-color: white;
             border: 1px solid #d1d5db;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             outline: none;
-            height: 2.5rem;
-            min-height: 2.5rem;
+            height: 2rem;
+            min-height: 2rem;
             box-sizing: border-box;
-            line-height: 1.5;
+            line-height: 1.4;
                 border-radius: 0 !important;
         }
         
@@ -762,10 +849,12 @@
                 height: 72px;
         }
         
-            .container {
-                padding-left: 8px;
-                padding-right: 8px;
-            }
+                    .container {
+            padding-left: 8px;
+            padding-right: 8px;
+            max-width: none !important;
+            width: 100% !important;
+        }
             
             .overflow-x-auto {
                 -webkit-overflow-scrolling: touch;
@@ -859,7 +948,7 @@
 
 
 
-    <div class="container mx-auto p-2 sm:p-4 md:p-6 lg:p-8">
+    <div class="container mx-auto p-2 sm:p-4 md:p-6 lg:p-8" style="max-width: none !important; width: 100% !important;">
         <!-- Header -->
         <header class="full-width-header mb-4 sm:mb-6 md:mb-8">
             <div class="header-banner">
@@ -955,6 +1044,10 @@
                                     <label class="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 p-1">
                                         <input type="checkbox" value="Draft" class="status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                         <span class="text-xs text-gray-700">Draft</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 p-1">
+                                        <input type="checkbox" value="Writing" class="status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                        <span class="text-xs text-gray-700">Writing</span>
                                     </label>
                                     <label class="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 p-1">
                                         <input type="checkbox" value="Submit" class="status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500">
@@ -1063,6 +1156,10 @@
                                 <span class="text-sm text-gray-700">Draft</span>
                             </label>
                             <label class="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
+                                <input type="checkbox" value="Writing" class="mobile-status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-sm text-gray-700">Writing</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
                                 <input type="checkbox" value="Submit" class="mobile-status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                 <span class="text-sm text-gray-700">Submit</span>
                             </label>
@@ -1137,12 +1234,12 @@
                     <table class="w-full fresh-table fixed-table">
                         <thead class="fresh-header">
                             <tr class="hover:bg-gray-50 table-row">
-                                    <th scope="col" class="w-16 min-w-[64px] max-w-[64px] px-0 py-0 whitespace-nowrap text-xs font-bold text-gray-600 text-center">ID</th>
-                                    <th scope="col" class="w-96 min-w-[384px] max-w-[384px] px-0 py-0 text-xs font-bold text-gray-600">Judul Penelitian</th>
-                                    <th scope="col" class="w-20 min-w-[80px] max-w-[80px] px-0 py-0 whitespace-nowrap text-xs font-bold text-gray-600 text-center">Akreditasi</th>
-                                    <th scope="col" class="col-status w-20 min-w-[80px] max-w-[80px] px-0 py-0 whitespace-nowrap text-xs font-bold text-gray-600 text-center">Status</th>
-                                    <th scope="col" class="w-24 min-w-[96px] max-w-[96px] px-0 py-0 whitespace-nowrap text-xs font-bold text-gray-600 text-center">Tahun</th>
-                                    <th scope="col" class="w-24 min-w-[96px] max-w-[96px] px-0 py-0 whitespace-nowrap text-xs font-bold text-gray-600 text-center">Aksi</th>
+                                    <th scope="col" class="px-0 py-0 text-xs font-bold text-gray-600 text-center">ID</th>
+                                    <th scope="col" class="px-0 py-0 text-xs font-bold text-gray-600">Judul Penelitian</th>
+                                    <th scope="col" class="px-0 py-0 text-xs font-bold text-gray-600 text-center">Akreditasi</th>
+                                    <th scope="col" class="col-status px-0 py-0 text-xs font-bold text-gray-600 text-center">Status</th>
+                                    <th scope="col" class="px-0 py-0 text-xs font-bold text-gray-600 text-center">Tahun</th>
+                                    <th scope="col" class="px-0 py-0 text-xs font-bold text-gray-600 text-center">Aksi</th>
                             </tr>
                         </thead>
                                              <tbody id="research-table-body" class="fresh-body">
@@ -1164,10 +1261,10 @@
                 </div>
                 
                 <!-- Pagination Navigation -->
-                <div id="pagination-container" class="mt-2 sm:mt-3 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2">
+                <div id="pagination-container" class="mt-3 flex flex-col sm:flex-row items-center justify-between gap-3 bg-gray-50 p-3 rounded-lg border">
                     <!-- Info Halaman -->
-                    <div class="text-xs text-gray-600">
-                        <span id="page-info">Menampilkan 1-8 dari 0 data</span>
+                    <div class="text-xs text-gray-600 font-medium">
+                        <span id="page-info">Menampilkan 1-10 dari 0 data</span>
                     </div>
                     
                     <!-- Navigasi Halaman -->
@@ -1192,12 +1289,13 @@
                     
                     <!-- Dropdown Items per Page -->
                     <div class="flex items-center gap-1">
-                        <label class="text-xs text-gray-600">Per halaman:</label>
-                        <select id="items-per-page" class="fresh-select">
-                            <option value="8">8</option>
-                            <option value="16">16</option>
-                            <option value="24">24</option>
-                            <option value="32">32</option>
+                        <label class="text-xs text-gray-600 font-medium whitespace-nowrap">Per halaman:</label>
+                        <select id="items-per-page" class="fresh-select" style="width: 60px !important; min-width: 60px !important; max-width: 60px !important;">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
                         </select>
                     </div>
                 </div>
@@ -1231,6 +1329,7 @@
                                     <select id="status" name="status" class="mt-1 block w-full px-2 py-1.5 bg-white border border-gray-300 rounded text-xs focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                                         <option value="">Pilih Status</option>
                                         <option value="Draft">Draft</option>
+                                        <option value="Writing">Writing</option>
                                         <option value="Submit">Submit</option>
                                         <option value="Review">Review</option>
                                         <option value="Declined">Declined</option>
@@ -1453,7 +1552,7 @@
         
         // Pagination variables
         let currentPage = 1;
-        let itemsPerPage = 8;
+        let itemsPerPage = 10;
         let filteredData = [];
         
         // Function to generate random 4-digit research ID
@@ -1513,7 +1612,7 @@
                     </td>
                         <td class="w-32 px-3 py-3 whitespace-nowrap border-r border-gray-300">
                                                     <span class="accreditation-badge">
-                            ${value.status === 'Draft' ? '-' : capitalizeAccreditation(value.accreditation)}
+                            ${value.status === 'Draft' || value.status === 'Writing' ? '-' : capitalizeAccreditation(value.accreditation)}
                         </span>
                         </td>
                         <td class="w-32 px-3 py-3 whitespace-nowrap border-r border-gray-300">
@@ -1650,16 +1749,16 @@
                 // Akreditasi wajib jika status Published
                 accreditationField.required = true;
                 accreditationField.classList.add('border-red-300');
-            } else if (this.value === 'Draft' || this.value === 'Declined') {
+            } else if (this.value === 'Draft' || this.value === 'Writing' || this.value === 'Declined') {
                 yearPublishedContainer.classList.add('hidden');
                 publishedLinkContainer.classList.add('hidden');
                 journalLinkContainer.classList.add('hidden');
-                    // Sembunyikan field Akreditasi jika status Draft atau Declined
+                    // Sembunyikan field Akreditasi jika status Draft, Writing atau Declined
                     accreditationField.parentElement.classList.add('hidden');
-                // Akreditasi tidak wajib jika status Draft atau Declined
+                // Akreditasi tidak wajib jika status Draft, Writing atau Declined
                 accreditationField.required = false;
                 accreditationField.classList.remove('border-red-300');
-                    // Reset values when status is Draft atau Declined
+                    // Reset values when status is Draft, Writing atau Declined
                 document.getElementById('year_published').value = '';
                 document.getElementById('published_link').value = '';
                 document.getElementById('journal_link').value = '';
@@ -1871,11 +1970,11 @@
                     accreditationField.parentElement.classList.remove('hidden');
                  accreditationField.required = true;
                  accreditationField.classList.add('border-red-300');
-             } else if (data.status === 'Draft' || data.status === 'Declined') {
+             } else if (data.status === 'Draft' || data.status === 'Writing' || data.status === 'Declined') {
                  yearPublishedContainer.classList.add('hidden');
                  publishedLinkContainer.classList.add('hidden');
                  journalLinkContainer.classList.add('hidden');
-                    // Sembunyikan field Akreditasi jika status Draft atau Declined
+                    // Sembunyikan field Akreditasi jika status Draft, Writing atau Declined
                     accreditationField.parentElement.classList.add('hidden');
                  accreditationField.required = false;
                  accreditationField.classList.remove('border-red-300');
@@ -1943,7 +2042,7 @@
                 title: formData.get('title'),
                 accreditation: formData.get('accreditation'),
                 status: status,
-                journal_link: (status === 'Draft' || status === 'Declined') ? '' : formData.get('journal_link'),
+                journal_link: (status === 'Draft' || status === 'Writing' || status === 'Declined') ? '' : formData.get('journal_link'),
                 doc_link: formData.get('doc_link'),
                 implementation_year: parseInt(formData.get('implementation_year')),
                 published: {
@@ -2004,6 +2103,7 @@
         function getStatusColor(status) {
             switch (status) {
                 case 'Draft': return 'fresh-badge draft';
+                case 'Writing': return 'fresh-badge writing';
                 case 'Submit': return 'fresh-badge submit';
                 case 'Review': return 'fresh-badge review';
                 case 'Declined': return 'fresh-badge declined';
@@ -2293,22 +2393,22 @@
                 row.classList.add('hover:bg-gray-50', 'table-row');
                 
                 row.innerHTML = `
-                    <td class="w-16 min-w-[64px] max-w-[64px] px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.research_id || 'N/A'}</td>
-                    <td class="w-96 min-w-[384px] max-w-[384px] px-3 py-3 border-r border-gray-300">
-                        <div class="text-xs font-medium text-gray-800 text-wrap" title="${value.title || 'N/A'}">${value.title || 'N/A'}</div>
+                    <td class="px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.research_id || 'N/A'}</td>
+                    <td class="px-3 py-3 border-r border-gray-300">
+                        <div class="text-xs font-medium text-gray-800" title="${value.title || 'N/A'}">${value.title || 'N/A'}</div>
                     </td>
-                    <td class="w-20 min-w-[80px] max-w-[80px] px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
+                    <td class="px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
                         <span class="accreditation-badge">
-                            ${value.status === 'Draft' ? '-' : capitalizeAccreditation(value.accreditation)}
+                            ${value.status === 'Draft' || value.status === 'Writing' ? '-' : capitalizeAccreditation(value.accreditation)}
                         </span>
                     </td>
-                    <td class="w-20 min-w-[80px] max-w-[80px] px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
+                    <td class="px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
                         <span class="status-text">
                             ${value.status || 'N/A'}
                         </span>
                     </td>
-                    <td class="w-24 min-w-[96px] max-w-[96px] px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.implementation_year || 'N/A'}</td>
-                    <td class="w-32 min-w-[128px] max-w-[128px] px-3 py-3 whitespace-nowrap text-center text-xs font-medium space-x-1">
+                    <td class="px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.implementation_year || 'N/A'}</td>
+                    <td class="px-3 py-3 whitespace-nowrap text-center text-xs font-medium space-x-1">
                         <button data-key="${key}" class="fresh-button view-btn text-gray-500" title="View"><i class="fas fa-eye"></i></button>
                         <button data-key="${key}" class="fresh-button edit-btn text-gray-500" title="Edit"><i class="fas fa-pencil-alt"></i></button>
                         <button data-key="${key}" class="fresh-button delete-btn text-gray-500" title="Delete"><i class="fas fa-trash"></i></button>
@@ -2449,20 +2549,20 @@
                 row.classList.add('hover:bg-gray-50', 'table-row');
                 
                 row.innerHTML = `
-                    <td class="w-16 min-w-[64px] max-w-[64px] px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.research_id || 'N/A'}</td>
-                    <td class="w-96 min-w-[384px] max-w-[384px] px-3 py-3 border-r border-gray-300">
-                        <div class="text-xs font-medium text-gray-800 text-wrap" title="${value.title || 'N/A'}">${value.title || 'N/A'}</div>
+                    <td class="px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.research_id || 'N/A'}</td>
+                    <td class="px-3 py-3 border-r border-gray-300">
+                        <div class="text-xs font-medium text-gray-800" title="${value.title || 'N/A'}">${value.title || 'N/A'}</div>
                     </td>
-                    <td class="w-32 min-w-[128px] max-w-[128px] px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
+                    <td class="px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
                         <span class="accreditation-badge">
-                            ${value.status === 'Draft' ? '-' : capitalizeAccreditation(value.accreditation)}
+                            ${value.status === 'Draft' || value.status === 'Writing' ? '-' : capitalizeAccreditation(value.accreditation)}
                         </span>
                     </td>
-                    <td class="w-32 min-w-[128px] max-w-[128px] px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
+                    <td class="px-3 py-3 whitespace-nowrap border-r border-gray-300 text-center">
                         <span class="status-text">${value.status || 'N/A'}</span>
                     </td>
-                    <td class="w-24 min-w-[96px] max-w-[96px] px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.implementation_year || 'N/A'}</td>
-                                        <td class="w-24 min-w-[96px] max-w-[96px] px-2 py-2 whitespace-nowrap text-xs font-medium action-column">
+                    <td class="px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300 text-center">${value.implementation_year || 'N/A'}</td>
+                                        <td class="px-2 py-2 whitespace-nowrap text-xs font-medium action-column">
                         <div class="flex items-center justify-center space-x-1">
                             <button data-key="${key}" class="fresh-button view-btn text-gray-500" title="View"><i class="fas fa-eye"></i></button>
                             <button data-key="${key}" class="fresh-button edit-btn text-gray-500" title="Edit"><i class="fas fa-pencil-alt"></i></button>
