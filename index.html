@@ -49,7 +49,7 @@
             word-wrap: break-word;
             word-break: break-word;
             hyphens: auto;
-            max-width: none !important;
+            max-width: 100% !important;
             width: auto !important;
             min-width: 0 !important;
         }
@@ -58,17 +58,16 @@
         .col-no {
             width: auto !important;
             min-width: 0 !important;
-            max-width: none !important;
+            max-width: 100% !important;
             text-align: center;
         }
         
         .col-title {
             width: auto !important;
             min-width: 0 !important;
-            max-width: none !important;
+            max-width: 100% !important;
             white-space: normal !important;
             word-wrap: break-word !important;
-            overflow-wrap: break-word !important;
             text-transform: capitalize !important;
             text-align: left;
         }
@@ -76,7 +75,7 @@
         .col-accreditation {
             width: auto !important;
             min-width: 0 !important;
-            max-width: none !important;
+            max-width: 100% !important;
             text-align: center;
             white-space: normal !important;
             word-wrap: break-word !important;
@@ -85,57 +84,131 @@
         .col-status {
             width: auto !important;
             min-width: 0 !important;
-            max-width: none !important;
+            max-width: 100% !important;
             text-align: center;
         }
             
         .col-year {
             width: auto !important;
             min-width: 0 !important;
-            max-width: none !important;
+            max-width: 100% !important;
             text-align: center;
         }
             
         .col-actions {
             width: auto !important;
             min-width: 0 !important;
-            max-width: none !important;
+            max-width: 100% !important;
             text-align: center;
         }
             
             /* Table styling */
         .table_component {
             width: 100%;
-            overflow: visible !important;
-            max-width: none !important;
+            max-width: 100% !important;
         }
         
-        /* Mobile overflow - hanya untuk hp */
+        /* Mobile styles - hanya untuk hp */
         @media (max-width: 640px) {
             .table_component {
-                overflow-x: auto !important;
-                overflow-y: visible !important;
                 width: 100% !important;
             }
             
             .fresh-table {
-                min-width: 600px !important;
-                width: 600px !important;
+                min-width: 100% !important;
+                width: 100% !important;
+                font-size: 11px !important;
             }
             
             .fresh-table td, .fresh-table th {
-                white-space: nowrap !important;
-                word-wrap: normal !important;
-                word-break: normal !important;
-            }
-            
-            /* Khusus kolom judul tetap wrap di mobile */
-            .fresh-table td:nth-child(2),
-            .fresh-table th:nth-child(2) {
+                padding: 6px 4px !important;
                 white-space: normal !important;
                 word-wrap: break-word !important;
                 word-break: break-word !important;
-                max-width: 200px !important;
+                font-size: 11px !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* Kolom ID - lebih kecil */
+            .fresh-table td:nth-child(1),
+            .fresh-table th:nth-child(1) {
+                width: 15% !important;
+                min-width: 50px !important;
+                max-width: 60px !important;
+                text-align: center !important;
+                font-size: 10px !important;
+            }
+            
+            /* Kolom Judul - lebih besar */
+            .fresh-table td:nth-child(2),
+            .fresh-table th:nth-child(2) {
+                width: 40% !important;
+                min-width: 120px !important;
+                max-width: none !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+                font-size: 11px !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* Kolom Akreditasi - lebih kecil */
+            .fresh-table td:nth-child(3),
+            .fresh-table th:nth-child(3) {
+                width: 15% !important;
+                min-width: 60px !important;
+                max-width: 80px !important;
+                text-align: center !important;
+                font-size: 10px !important;
+            }
+            
+            /* Kolom Status - lebih kecil */
+            .fresh-table td:nth-child(4),
+            .fresh-table th:nth-child(4) {
+                width: 15% !important;
+                min-width: 60px !important;
+                max-width: 80px !important;
+                text-align: center !important;
+                font-size: 10px !important;
+            }
+            
+            /* Kolom Tahun - lebih kecil */
+            .fresh-table td:nth-child(5),
+            .fresh-table th:nth-child(5) {
+                width: 10% !important;
+                min-width: 50px !important;
+                max-width: 60px !important;
+                text-align: center !important;
+                font-size: 10px !important;
+            }
+            
+            /* Kolom Aksi - lebih kecil */
+            .fresh-table td:nth-child(6),
+            .fresh-table th:nth-child(6) {
+                width: 15% !important;
+                min-width: 80px !important;
+                max-width: 100px !important;
+                text-align: center !important;
+            }
+            
+            /* Button aksi lebih kecil */
+            .fresh-button {
+                padding: 2px !important;
+                min-width: 20px !important;
+                height: 20px !important;
+                font-size: 10px !important;
+            }
+            
+            /* Badge lebih kecil */
+            .fresh-badge {
+                padding: 2px 4px !important;
+                font-size: 9px !important;
+                border-radius: 8px !important;
+            }
+            
+            .accreditation-badge {
+                font-size: 9px !important;
+                padding: 2px 4px !important;
             }
         }
         
@@ -149,7 +222,7 @@
             border-spacing: 0;
             table-layout: auto;
             min-width: 100%;
-            max-width: none;
+            max-width: 100%;
         }
 
         .fresh-table td, .fresh-table th {
@@ -158,7 +231,7 @@
             white-space: normal;
             padding: 12px 16px;
             vertical-align: top;
-            max-width: none !important;
+            max-width: 100% !important;
             width: auto !important;
             min-width: 0 !important;
         }
@@ -199,7 +272,7 @@
                 word-wrap: break-word;
                 word-break: break-word;
                 white-space: normal;
-                max-width: none !important;
+                max-width: 100% !important;
                 width: auto !important;
                 min-width: 0 !important;
             }
@@ -239,7 +312,7 @@
                 word-break: break-word;
                 white-space: normal;
                 vertical-align: top;
-                max-width: none !important;
+                max-width: 100% !important;
                 width: auto !important;
                 min-width: 0 !important;
             }
@@ -251,8 +324,6 @@
                 background-color: #f8fafc;
             height: auto;
             min-height: 0;
-            transition: all 0.3s ease;
-                overflow: hidden;
                 margin: 3px 4px;
                 border: 1px solid #e5e7eb;
         }
@@ -260,7 +331,6 @@
         .collapse-transition.hidden {
             height: 0;
             min-height: 0;
-            overflow: hidden;
         }
         
             .collapse-transition.expanded {
@@ -284,7 +354,6 @@
                 letter-spacing: 0.2px;
                 text-transform: uppercase;
                 border: none;
-                transition: all 0.2s ease;
                 display: inline-block;
                 line-height: 1.4;
                 border-radius: 12px;
@@ -406,7 +475,6 @@
             height: 1.5rem;
                 background: transparent;
                 color: #6b7280;
-                transition: all 0.2s ease;
             }
             
             .fresh-button:hover {
@@ -415,11 +483,9 @@
             }
             
             .fresh-button.view-btn i {
-                transition: transform 0.3s ease-in-out;
             }
             
             .fresh-button.view-btn.expanded i {
-                transform: rotate(180deg);
             }
             
             /* Pagination styling */
@@ -437,7 +503,6 @@
             cursor: pointer;
             min-width: 1.5rem;
             height: 1.5rem;
-                transition: all 0.2s ease;
                 border-radius: 4px;
         }
         
@@ -530,7 +595,6 @@
             margin-top: 0.25rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             max-height: 12rem;
-            overflow-y: auto;
             width: 100%;
             background-color: white;
             border: 1px solid #d1d5db;
@@ -541,7 +605,6 @@
             .text-wrap {
                 white-space: normal !important;
                 word-wrap: break-word !important;
-                overflow-wrap: break-word !important;
                 line-height: 1.4 !important;
             text-transform: capitalize !important;
         }
@@ -559,7 +622,6 @@
             border: 2px solid #e5e7eb;
             border-radius: 6px;
             padding: 6px 8px;
-            transition: all 0.2s ease;
             background: white;
         }
         
@@ -601,16 +663,15 @@
             
             /* Header banner styling */
         .full-width-header {
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            width: 100vw;
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
         }
         
         .header-banner {
             background: #1e3a8a;
             min-height: 200px;
             position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
             padding: 2rem 4rem;
@@ -847,17 +908,13 @@
             .brain-graphic {
                 width: 120px;
                 height: 72px;
-        }
+            }
         
-                    .container {
-            padding-left: 8px;
-            padding-right: 8px;
-            max-width: none !important;
-            width: 100% !important;
-        }
-            
-            .overflow-x-auto {
-                -webkit-overflow-scrolling: touch;
+            .container {
+                padding-left: 8px;
+                padding-right: 8px;
+                max-width: 100% !important;
+                width: 100% !important;
             }
             
             .text-xs {
@@ -865,7 +922,7 @@
             }
             
             .btn-transition {
-                    min-height: 44px;
+                min-height: 44px;
             }
             
             .modal-content {
@@ -881,60 +938,123 @@
                 margin-top: 0.5rem;
             }
             
-            th, td {
-                padding: 8px 4px;
-                font-size: 0.75rem;
+            /* Pagination mobile */
+            .fresh-pagination-btn {
+                padding: 4px 6px !important;
+                font-size: 10px !important;
+                min-width: 24px !important;
+                height: 24px !important;
             }
             
-            .px-2.py-1 {
-                padding: 4px 8px;
-                font-size: 0.7rem;
+            /* Filter mobile */
+            .filter-select, .filter-button {
+                font-size: 11px !important;
+                height: 32px !important;
+                min-height: 32px !important;
+            }
+            
+            /* Collapse mobile */
+            .collapse-transition td {
+                padding: 8px 12px !important;
+                font-size: 11px !important;
+            }
+            
+            /* Detail mobile */
+            .border.border-gray-300.px-3.py-1.5 {
+                padding: 6px 8px !important;
+                font-size: 10px !important;
             }
         }
             
             @media (max-width: 475px) {
-                .fresh-body td {
-                    padding: 4px 4px;
-                    height: 44px;
-                    min-height: 44px;
+                .fresh-table {
+                    font-size: 10px !important;
                 }
                 
-                .fresh-badge {
-                    padding: 3px 6px;
-                    letter-spacing: 0.1px;
+                .fresh-table td, .fresh-table th {
+                    padding: 4px 2px !important;
+                    font-size: 10px !important;
+                    line-height: 1.2 !important;
                 }
                 
+                /* Kolom ID - lebih kecil lagi */
+                .fresh-table td:nth-child(1),
+                .fresh-table th:nth-child(1) {
+                    width: 12% !important;
+                    min-width: 40px !important;
+                    max-width: 50px !important;
+                    font-size: 9px !important;
+                }
+                
+                /* Kolom Judul - lebih besar */
+                .fresh-table td:nth-child(2),
+                .fresh-table th:nth-child(2) {
+                    width: 45% !important;
+                    min-width: 100px !important;
+                    font-size: 10px !important;
+                }
+                
+                /* Kolom Akreditasi - lebih kecil */
+                .fresh-table td:nth-child(3),
+                .fresh-table th:nth-child(3) {
+                    width: 13% !important;
+                    min-width: 50px !important;
+                    max-width: 70px !important;
+                    font-size: 9px !important;
+                }
+                
+                /* Kolom Status - lebih kecil */
+                .fresh-table td:nth-child(4),
+                .fresh-table th:nth-child(4) {
+                    width: 13% !important;
+                    min-width: 50px !important;
+                    max-width: 70px !important;
+                    font-size: 9px !important;
+                }
+                
+                /* Kolom Tahun - lebih kecil */
+                .fresh-table td:nth-child(5),
+                .fresh-table th:nth-child(5) {
+                    width: 8% !important;
+                    min-width: 40px !important;
+                    max-width: 50px !important;
+                    font-size: 9px !important;
+                }
+                
+                /* Kolom Aksi - lebih kecil */
+                .fresh-table td:nth-child(6),
+                .fresh-table th:nth-child(6) {
+                    width: 12% !important;
+                    min-width: 70px !important;
+                    max-width: 80px !important;
+                }
+                
+                /* Button aksi lebih kecil */
                 .fresh-button {
-                    padding: 4px;
-                    width: 28px;
-                    height: 28px;
+                    padding: 1px !important;
+                    min-width: 18px !important;
+                    height: 18px !important;
+                    font-size: 9px !important;
                 }
                 
-                .fresh-collapse {
-                    margin: 3px 4px;
+                /* Badge lebih kecil */
+                .fresh-badge {
+                    padding: 1px 3px !important;
+                    font-size: 8px !important;
+                    border-radius: 6px !important;
                 }
                 
-                .fresh-card {
-                    padding: 8px;
+                .accreditation-badge {
+                    font-size: 8px !important;
+                    padding: 1px 3px !important;
                 }
                 
-                .fresh-input {
-                    padding: 5px 7px;
-                }
-                
+                /* Pagination lebih kecil */
                 .fresh-pagination-btn {
-                    padding: 6px 12px;
-                    font-size: 12px;
-                }
-                
-                .fresh-select {
-                    padding: 4px 8px;
-                    font-size: 12px;
-                }
-                
-                .fixed-table tr {
-                    height: 44px;
-                    min-height: 44px;
+                    padding: 3px 5px !important;
+                    font-size: 9px !important;
+                    min-width: 20px !important;
+                    height: 20px !important;
                 }
             }
             
@@ -942,13 +1062,29 @@
             select, input {
                 border-radius: 0 !important;
             }
+            
+            /* Styling untuk tombol dokumen */
+            .doc-view-btn {
+                background: transparent;
+                border: none;
+                color: #2563eb;
+                text-decoration: underline;
+                cursor: pointer;
+                font-size: inherit;
+                padding: 0;
+                margin-left: 0.5rem;
+            }
+            
+            .doc-view-btn:hover {
+                color: #1d4ed8;
+            }
     </style>
 </head>
 <body class="antialiased text-gray-800">
 
 
 
-    <div class="container mx-auto p-2 sm:p-4 md:p-6 lg:p-8" style="max-width: none !important; width: 100% !important;">
+    <div class="container mx-auto p-2 sm:p-4 md:p-6 lg:p-8" style="max-width: 100% !important; width: 100% !important;">
         <!-- Header -->
         <header class="full-width-header mb-4 sm:mb-6 md:mb-8">
             <div class="header-banner">
@@ -1036,7 +1172,7 @@
                                 <i class="fas fa-chevron-down text-xs text-gray-400"></i>
                             </button>
                             <div id="status-filter-dropdown" class="filter-dropdown hidden">
-                                <div class="p-2 space-y-1">
+                                <div class="p-2 space-y-1 overflow-y-auto max-h-48">
                                     <label class="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 p-1">
                                         <input type="checkbox" value="" class="status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
                                         <span class="text-xs text-gray-700">Semua Status</span>
@@ -1093,26 +1229,26 @@
         
         <!-- Mobile Filter Toggle Button (visible only on mobile) -->
         <div class="sm:hidden mb-4">
-            <button id="mobile-filter-toggle" class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors">
+            <button id="mobile-filter-toggle" class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700">
                 <i class="fas fa-filter"></i>
                 <span>Filter & Search</span>
-                <i class="fas fa-chevron-right transition-transform" id="mobile-filter-icon"></i>
+                <i class="fas fa-chevron-right" id="mobile-filter-icon"></i>
             </button>
         </div>
         
         <!-- Mobile Filter Sidebar -->
-        <div id="mobile-filter-sidebar" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 sm:hidden">
+        <div id="mobile-filter-sidebar" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl translate-x-full z-50 sm:hidden">
             <div class="flex flex-col h-full">
                 <!-- Header -->
                 <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
                     <h3 class="text-lg font-semibold text-gray-800">Filter & Search</h3>
-                    <button id="mobile-filter-close" class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <button id="mobile-filter-close" class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg">
                         <i class="fas fa-times text-lg"></i>
                     </button>
                 </div>
                 
                 <!-- Filter Content -->
-                <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                <div class="flex-1 p-4 space-y-4">
                     <!-- Search Fields -->
                     <div class="space-y-3">
                         <h4 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Search</h4>
@@ -1146,7 +1282,7 @@
                     <!-- Status Filter -->
                     <div class="space-y-3">
                         <h4 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Filter Status</h4>
-                        <div class="space-y-2">
+                        <div class="space-y-2 overflow-y-auto max-h-48">
                             <label class="flex items-center space-x-2 cursor-pointer p-2 hover:bg-gray-50 rounded">
                                 <input type="checkbox" value="" class="mobile-status-checkbox border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
                                 <span class="text-sm text-gray-700">Semua Status</span>
@@ -1204,7 +1340,7 @@
                 
                 <!-- Footer Actions -->
                 <div class="p-4 border-t border-gray-200 bg-gray-50">
-                    <button id="mobile-filter-apply" class="w-full bg-gray-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-gray-600 transition-colors">
+                    <button id="mobile-filter-apply" class="w-full bg-gray-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-gray-600">
                         Tutup
                     </button>
                 </div>
@@ -1215,12 +1351,12 @@
         <div id="mobile-filter-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden hidden"></div>
 
         <!-- Main Content: Table -->
-        <div class="bg-white shadow-lg overflow-hidden">
+        <div class="bg-white shadow-lg">
             <div class="p-2">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-2 mb-2 sm:mb-3">
                     <h2 class="text-sm sm:text-base md:text-lg font-semibold">Research List</h2>
                     <div class="flex gap-2">
-                        <button id="add-research-btn" class="btn-transition w-full sm:w-auto inline-flex items-center justify-center px-1.5 py-1 sm:px-2 sm:py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <button id="add-research-btn" class=" w-full sm:w-auto inline-flex items-center justify-center px-1.5 py-1 sm:px-2 sm:py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <i class="fas fa-plus mr-1 sm:mr-1.5 text-xs"></i>
                             <span class="hidden xs:inline">Tambah Penelitian Baru</span>
                             <span class="xs:hidden">Tambah</span>
@@ -1303,12 +1439,12 @@
         </div>
         
         <!-- Add/Edit Research Modal -->
-        <div id="researchModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden" style="z-index: 9999;">
+        <div id="researchModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full hidden" style="z-index: 9999;">
             <div class="flex items-center justify-center min-h-screen p-2 sm:p-4">
                 <div class="relative w-full max-w-3xl p-3 sm:p-4 border shadow-lg rounded-md bg-white modal-content">
                     <div class="flex justify-between items-center pb-2 border-b">
                         <h3 id="modal-title" class="text-base sm:text-lg font-semibold text-gray-900">Tambah Penelitian Baru</h3>
-                        <button id="closeResearchModal" class="btn-transition text-gray-400 hover:text-gray-600">
+                        <button id="closeResearchModal" class=" text-gray-400 hover:text-gray-600">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
@@ -1393,10 +1529,10 @@
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row justify-end gap-2 sm:gap-3 pt-3 border-t">
-                            <button type="button" id="cancel-btn" class="btn-transition w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-red-300 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                            <button type="button" id="cancel-btn" class=" w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-red-300 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                 Batal
                             </button>
-                            <button type="submit" id="submit-btn" class="btn-transition w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <button type="submit" id="submit-btn" class=" w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 Tambah Penelitian
                             </button>
                         </div>
@@ -1409,11 +1545,11 @@
     </div>
 
     <!-- Modal for Details -->
-    <div id="detailModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50">
+    <div id="detailModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full hidden z-50">
         <div class="relative top-10 sm:top-20 mx-auto p-3 sm:p-5 border w-full max-w-2xl shadow-lg rounded-md bg-white">
             <div class="flex justify-between items-center pb-3 border-b">
                 <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Research Details</h3>
-                <button id="closeDetailModal" class="btn-transition text-gray-400 hover:text-gray-600">
+                <button id="closeDetailModal" class=" text-gray-400 hover:text-gray-600">
                     <i class="fas fa-times fa-lg"></i>
                 </button>
             </div>
@@ -1424,7 +1560,7 @@
     </div>
     
     <!-- Confirmation Modal for Delete -->
-    <div id="deleteConfirmModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50">
+    <div id="deleteConfirmModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full hidden z-50">
         <div class="relative top-10 sm:top-20 mx-auto p-3 sm:p-5 border w-full max-w-md shadow-lg rounded-md bg-white">
             <div class="mt-3 text-center">
                 <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
@@ -1435,10 +1571,10 @@
                     <p class="text-xs sm:text-sm text-gray-500">Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dibatalkan.</p>
                 </div>
                 <div class="items-center px-4 py-3 space-y-2 sm:space-y-0 sm:space-x-4">
-                    <button id="confirmDeleteBtn" class="btn-transition w-full sm:w-auto px-4 py-2 bg-red-600 text-white text-sm sm:text-base font-medium rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <button id="confirmDeleteBtn" class=" w-full sm:w-auto px-4 py-2 bg-red-600 text-white text-sm sm:text-base font-medium rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
                         Hapus
                     </button>
-                    <button id="cancelDeleteBtn" class="btn-transition w-full sm:w-auto px-4 py-2 bg-gray-200 text-gray-800 text-sm sm:text-base font-medium rounded-md shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <button id="cancelDeleteBtn" class=" w-full sm:w-auto px-4 py-2 bg-gray-200 text-gray-800 text-sm sm:text-base font-medium rounded-md shadow-sm hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500">
                         Batal
                     </button>
                 </div>
@@ -1451,12 +1587,12 @@
 
 
     <!-- PIN Authentication Modal -->
-    <div id="pinModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50">
+    <div id="pinModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full hidden z-50">
         <div class="flex items-center justify-center min-h-screen p-2 sm:p-4">
             <div class="relative w-full max-w-md p-3 sm:p-4 border shadow-lg rounded-md bg-white modal-content">
                 <div class="flex justify-between items-center pb-2 border-b">
                     <h3 id="pin-modal-title" class="text-sm sm:text-base font-semibold text-gray-900">Verifikasi PIN</h3>
-                    <button id="closePinModal" class="btn-transition text-gray-400 hover:text-gray-600">
+                    <button id="closePinModal" class=" text-gray-400 hover:text-gray-600">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
@@ -1467,10 +1603,10 @@
                             <input type="password" id="pin-input" name="pin" required maxlength="8" class="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Masukkan PIN">
                         </div>
                         <div class="flex flex-col sm:flex-row justify-end gap-2 sm:gap-3 pt-3 border-t">
-                            <button type="button" id="cancel-pin-btn" class="btn-transition w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-red-300 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                            <button type="button" id="cancel-pin-btn" class=" w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-red-300 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                 Batal
                             </button>
-                            <button type="submit" id="submit-pin-btn" class="btn-transition w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <button type="submit" id="submit-pin-btn" class=" w-full sm:w-auto inline-flex items-center justify-center px-3 py-2 sm:py-1.5 border border-transparent text-xs font-medium shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 Verifikasi
                             </button>
                         </div>
@@ -1480,6 +1616,59 @@
         </div>
     </div>
 
+    <!-- Modal untuk menampilkan dokumen Google Drive -->
+    <div id="myModal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-2 sm:p-4">
+            <div class="relative w-full max-w-2xl p-3 sm:p-4 border shadow-lg rounded-md bg-white modal-content">
+                <div class="flex justify-between items-center pb-2 border-b">
+                    <h3 class="text-sm sm:text-base font-semibold text-gray-900">Dokumen Penelitian</h3>
+                    <button onclick="closeModal()" class=" text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="mt-3">
+                    <iframe id="embedFrame" width="100%" height="400" frameborder="0" style="border: none; border-radius: 6px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script untuk modal dokumen Google Drive -->
+    <script>
+        function generateEmbed(driveLink) {
+            // Menarik ID dari link Google Drive
+            const fileIdMatch = driveLink.match(/[-\w]{25,}/);
+            if (fileIdMatch) {
+                const fileId = fileIdMatch[0];
+                
+                // Membuat link embed
+                const embedLink = `https://drive.google.com/file/d/${fileId}/preview`;
+
+                // Set link embed ke iframe untuk menampilkan dokumen
+                document.getElementById('embedFrame').src = embedLink;
+
+                // Menampilkan modal pop-up dengan dokumen
+                document.getElementById('myModal').style.display = "block";
+            } else {
+                alert('URL Google Drive tidak valid!');
+            }
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+            // Menghapus konten iframe setelah ditutup
+            document.getElementById('embedFrame').src = '';
+        }
+
+        // Menutup modal ketika klik di luar area modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 
     <!-- Firebase SDK -->
     <script type="module">
@@ -1599,89 +1788,6 @@
             
             // Render table with pagination
             renderTableWithPagination(data);
-            return;
-                let counter = 1;
-                Object.entries(data).forEach(([key, value]) => {
-                    const row = document.createElement('tr');
-                    row.classList.add('hover:bg-gray-50', 'table-row');
-                    
-                    row.innerHTML = `
-                        <td class="w-12 px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300">${counter++}</td>
-                                            <td class="w-80 px-3 py-3 border-r border-gray-300">
-                        <div class="text-xs font-medium text-gray-800 text-wrap">${value.title || 'N/A'}</div>
-                    </td>
-                        <td class="w-32 px-3 py-3 whitespace-nowrap border-r border-gray-300">
-                                                    <span class="accreditation-badge">
-                            ${value.status === 'Draft' || value.status === 'Writing' ? '-' : capitalizeAccreditation(value.accreditation)}
-                        </span>
-                        </td>
-                        <td class="w-32 px-3 py-3 whitespace-nowrap border-r border-gray-300">
-                            <span class="status-text">
-                                ${value.status || 'N/A'}
-                            </span>
-                        </td>
-                        <td class="w-24 px-3 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-300">${value.implementation_year || 'N/A'}</td>
-                                            <td class="w-32 px-3 py-3 whitespace-nowrap text-xs font-medium">
-                        <div class="flex items-center justify-center space-x-2">
-                            <button data-key="${key}" class="fresh-button view-btn text-gray-500" title="View"><i class="fas fa-eye"></i></button>
-                            <button data-key="${key}" class="fresh-button edit-btn text-gray-500" title="Edit"><i class="fas fa-pencil-alt"></i></button>
-                            <button data-key="${key}" class="fresh-button delete-btn text-gray-500" title="Delete"><i class="fas fa-trash"></i></button>
-                        </div>
-                        </td>
-                    `;
-                    tableBody.appendChild(row);
-                    
-                    // Add collapse row for details
-                    const collapseRow = document.createElement('tr');
-                    collapseRow.id = `collapse-${key}`;
-                    collapseRow.classList.add('hidden', 'bg-gray-50', 'collapse-transition');
-                    collapseRow.innerHTML = `
-                        <td colspan="6" class="px-6 py-4">
-                        <div class="border border-gray-300 p-4 bg-gray-100">
-                                <div class="space-y-4">
-                                <div class="border border-gray-300 p-3 bg-gray-50">
-                                    <h4 class="text-sm font-semibold text-gray-700 mb-2">Detail Penelitian</h4>
-                                            <div class="space-y-2 text-xs">
-                                                                    <div class="flex flex-wrap gap-2">
-                                <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
-                                    <div class="flex items-center">
-                                        <span class="font-medium text-gray-600">Akreditasi:</span>
-                                        <span class="text-gray-700 ml-2">${value.accreditation || '-'}</span>
-                                            </div>
-                                        </div>
-                                <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
-                                    <div class="flex items-center">
-                                        <span class="font-medium text-gray-600">Link Jurnal:</span>
-                                        ${value.journal_link ? `<a href="${value.journal_link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline ml-2">Disini</a>` : '<span class="text-gray-700 ml-2">-</span>'}
-                                    </div>
-                                </div>
-                                <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
-                                    <div class="flex items-center">
-                                        <span class="font-medium text-gray-600">Link Dokumen:</span>
-                                        ${value.doc_link ? `<a href="${value.doc_link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline ml-2">Disini</a>` : '<span class="text-gray-700 ml-2">-</span>'}
-                                    </div>
-                                </div>
-                                <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
-                                    <div class="flex items-center">
-                                        <span class="font-medium text-gray-600">Tahun Publikasi:</span>
-                                        <span class="text-gray-700 ml-2">${value.published?.year_published || '-'}</span>
-                                    </div>
-                                </div>
-                                <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
-                                    <div class="flex items-center">
-                                        <span class="font-medium text-gray-600">Link Publikasi:</span>
-                                        ${value.published?.published_link ? `<a href="${value.published.published_link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline ml-2">Disini</a>` : '<span class="text-gray-700 ml-2">-</span>'}
-                                    </div>
-                                </div>
-                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    `;
-                    tableBody.appendChild(collapseRow);
-                });
-
         });
 
         // --- Event Delegation for Table Actions ---
@@ -1690,6 +1796,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             ensureValidStatusCheckboxState();
         });
+        
         
         tableBody.addEventListener('click', (e) => {
             const targetButton = e.target.closest('button');
@@ -1715,6 +1822,7 @@
         // Status filter dropdown functionality - Sederhana dan efektif
         statusCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', (e) => {
+                
                 // Sync to mobile filter first
                 const mobileCheckbox = document.querySelector(`.mobile-status-checkbox[value="${e.target.value}"]`);
                 if (mobileCheckbox) {
@@ -1723,6 +1831,9 @@
                 
                 // Then handle the change
                 handleStatusCheckboxChange.call(e.target);
+                
+                // Apply filters immediately after checkbox change
+                applyFilters();
             });
         });
         
@@ -2251,34 +2362,26 @@
                     });
                 }
             } else {
-                // Other checkbox clicked
-                if (this.checked) {
-                    // Uncheck "Semua Status" when individual status is selected
-                    if (allCheckbox) {
-                        allCheckbox.checked = false;
-                        // Sync to mobile
-                        const mobileAllCheckbox = document.querySelector('.mobile-status-checkbox[value=""]');
-                        if (mobileAllCheckbox) {
-                            mobileAllCheckbox.checked = false;
-                        }
+                // Other checkbox clicked - langsung uncheck "Semua Status" jika ada yang diubah
+                if (allCheckbox && allCheckbox.checked) {
+                    allCheckbox.checked = false;
+                    // Sync to mobile
+                    const mobileAllCheckbox = document.querySelector('.mobile-status-checkbox[value=""]');
+                    if (mobileAllCheckbox) {
+                        mobileAllCheckbox.checked = false;
                     }
-                } else {
-                    // Don't automatically check "Semua Status" when unchecking
-                    // Let user control which statuses they want to see
                 }
             }
             
             // Update teks filter
             updateStatusFilterText();
-            
-            // Apply filters immediately
-            applyFilters();
         }
         
         function getSelectedStatuses() {
             const selectedStatuses = [];
             const allCheckbox = document.querySelector('.status-checkbox[value=""]');
             const otherCheckboxes = document.querySelectorAll('.status-checkbox:not([value=""])');
+            
             
             // Jika "Semua Status" dicentang, return array kosong (tidak ada filter)
             if (allCheckbox && allCheckbox.checked) {
@@ -2318,57 +2421,43 @@
             const viewBtn = document.querySelector(`[data-key="${key}"].view-btn`);
             
             if (collapseRow) {
-                // Hide all other collapse rows first with smooth transition
+                // Hide all other collapse rows first
                 document.querySelectorAll('[id^="collapse-"]').forEach(row => {
                     if (row.id !== `collapse-${key}`) {
                         if (!row.classList.contains('hidden')) {
-                            hideCollapseSmooth(row);
+                            hideCollapse(row.id.replace('collapse-', ''));
                         }
                     }
                 });
                 
-                // Toggle current collapse row with smooth transition
+                // Toggle current collapse row
                 if (collapseRow.classList.contains('hidden')) {
-                    showCollapseSmooth(collapseRow, viewBtn);
+                    showCollapse(collapseRow, viewBtn);
                 } else {
-                    hideCollapseSmooth(collapseRow, viewBtn);
+                    hideCollapse(key);
                 }
             }
         }
         
-        function showCollapseSmooth(collapseRow, viewBtn) {
+        function showCollapse(collapseRow, viewBtn) {
             collapseRow.classList.remove('hidden');
             collapseRow.classList.add('expanded');
-            collapseRow.classList.remove('collapsing');
             
             if (viewBtn) {
                 viewBtn.classList.add('expanded');
             }
-            
-            // Trigger reflow for smooth animation
-            collapseRow.offsetHeight;
-        }
-        
-        function hideCollapseSmooth(collapseRow, viewBtn) {
-            collapseRow.classList.add('collapsing');
-            collapseRow.classList.remove('expanded');
-            
-            if (viewBtn) {
-                viewBtn.classList.remove('expanded');
-            }
-            
-            // Wait for transition to complete then hide
-            setTimeout(() => {
-                collapseRow.classList.add('hidden');
-                collapseRow.classList.remove('collapsing');
-            }, 300);
         }
         
         function hideCollapse(key) {
             const collapseRow = document.getElementById(`collapse-${key}`);
             const viewBtn = document.querySelector(`[data-key="${key}"].view-btn`);
             if (collapseRow) {
-                hideCollapseSmooth(collapseRow, viewBtn);
+                collapseRow.classList.add('hidden');
+                collapseRow.classList.remove('expanded');
+                
+                if (viewBtn) {
+                    viewBtn.classList.remove('expanded');
+                }
             }
         }
         
@@ -2444,7 +2533,7 @@
                                 <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
                                     <div class="flex items-center">
                                         <span class="font-medium text-gray-600">Link Dokumen:</span>
-                                        ${value.doc_link ? `<a href="${value.doc_link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline ml-2">Disini</a>` : '<span class="text-gray-700 ml-2">-</span>'}
+                                        ${value.doc_link ? `<button onclick="generateEmbed('${value.doc_link}')" class="doc-view-btn">Lihat Dokumen</button>` : '<span class="text-gray-700 ml-2">-</span>'}
                                     </div>
                                 </div>
                                 <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
@@ -2469,7 +2558,6 @@
         
         function showToast(message, type = 'success') {
             // Log ke console untuk debugging
-            console.log(`${type.toUpperCase()}: ${message}`);
             
             // Tampilkan alert untuk user
             if (type === 'error') {
@@ -2482,7 +2570,6 @@
         function loadResearchData() {
             // Firebase onValue listener akan otomatis update tabel
             // Jadi kita tidak perlu manual refresh
-            console.log('Research data updated - table will refresh automatically');
         }
         
         // --- Pagination Functions ---
@@ -2596,7 +2683,7 @@
                                 <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
                                     <div class="flex items-center">
                                         <span class="font-medium text-gray-600">Link Dokumen:</span>
-                                        ${value.doc_link ? `<a href="${value.doc_link}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline ml-2">Disini</a>` : '<span class="text-gray-700 ml-2">-</span>'}
+                                        ${value.doc_link ? `<button onclick="generateEmbed('${value.doc_link}')" class="doc-view-btn">Lihat Dokumen</button>` : '<span class="text-gray-700 ml-2">-</span>'}
                                     </div>
                                 </div>
                                 <div class="border border-gray-300 px-3 py-1.5 bg-gray-100">
@@ -2699,23 +2786,15 @@
             
             // Search by ID
             idSearch.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase().trim();
-                performSearch(searchTerm, 'id');
+                applyFilters();
             });
             
             // Search by Title
             titleSearch.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase().trim();
-                performSearch(searchTerm, 'title');
+                applyFilters();
             });
         }
         
-        function performSearch(searchTerm, searchType) {
-            if (!allData) return;
-            
-            // Gunakan applyFilters untuk mengintegrasikan dengan filter lainnya
-            applyFilters();
-        }
         
         function updateSearchInfo(searchTerm, searchType, resultCount) {
             const pageInfo = document.getElementById('page-info');
@@ -2791,7 +2870,6 @@
             
             sidebar.classList.remove('translate-x-full');
             overlay.classList.remove('hidden');
-            icon.classList.add('rotate-180');
             
             // Sync values from desktop filter
             syncMobileFilterWithDesktop();
@@ -2804,7 +2882,6 @@
             
             sidebar.classList.add('translate-x-full');
             overlay.classList.add('hidden');
-            icon.classList.remove('rotate-180');
         }
         
         function syncMobileFilterWithDesktop() {
@@ -2978,22 +3055,15 @@
                             });
                         }
                     } else {
-                        // Other checkbox clicked
+                        // Other checkbox clicked - langsung uncheck "Semua Status" jika ada yang diubah
                         const allCheckbox = document.querySelector('.mobile-status-checkbox[value=""]');
-                        const otherCheckboxes = document.querySelectorAll('.mobile-status-checkbox:not([value=""])');
                         
-                        if (e.target.checked) {
-                            // Uncheck "Semua Status" when individual status is selected
-                            if (allCheckbox) {
-                                allCheckbox.checked = false;
-                                const desktopAllCheckbox = document.querySelector('.status-checkbox[value=""]');
-                                if (desktopAllCheckbox) {
-                                    desktopAllCheckbox.checked = false;
-                                }
+                        if (allCheckbox && allCheckbox.checked) {
+                            allCheckbox.checked = false;
+                            const desktopAllCheckbox = document.querySelector('.status-checkbox[value=""]');
+                            if (desktopAllCheckbox) {
+                                desktopAllCheckbox.checked = false;
                             }
-                        } else {
-                            // Don't automatically check "Semua Status" when unchecking
-                            // Let user control which statuses they want to see
                         }
                         
                         // Sync current checkbox to desktop
